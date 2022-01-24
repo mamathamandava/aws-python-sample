@@ -98,7 +98,10 @@ input("\nPress enter to continue...")
 
 print('\nNow using Resource API')
 # First, create the service resource object
-s3resource = boto3.resource('s3')
+#s3resource = boto3.resource('s3')
+s3resource =  boto3.resource('s3',
+         aws_access_key_id=ACCESS_ID,
+         aws_secret_access_key= ACCESS_KEY)
 # Now, the bucket object
 bucket = s3resource.Bucket(bucket_name)
 # Then, the object object
